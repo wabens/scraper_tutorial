@@ -14,9 +14,7 @@ axios(url)
         const html = response.data; // raw data
         const $ = cheerio.load(html) // able to be parsed
 
-        // targets the body of the table holding player information
-        // returns array with objects of 'tr's 
-        // note the array is weird and doesn't use square brackets
+        // dogList contains the li's of each dog
         const dogList = $('.animal-list>li');
         const dogArray = [];
 
@@ -35,8 +33,7 @@ axios(url)
         //     });
         // });
 
-        // console.log(dogList[0].children[0]);
-        console.log(dogList[0]);
+        console.log($(dogList[0].children[0].children).find('p > a')[0]);
         
     })
     .catch(console.error);
