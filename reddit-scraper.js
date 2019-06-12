@@ -1,6 +1,8 @@
     // reddit-scraper.js
 
     const cheerio = require('cheerio');
+
+    // headless browser
     const puppeteer = require('puppeteer');
 
     const url = 'https://www.reddit.com/r/news/';
