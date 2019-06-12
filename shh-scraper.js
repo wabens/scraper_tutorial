@@ -19,21 +19,18 @@ axios(url)
         const dogArray = [];
 
         // loop through tr's and extract relevant information based on css class
-        // dogList.each(function () {
-        //     const rank = $(this).find('.rank > strong').text();
-        //     const playerName = $(this).find('.playerName > strong').text();
-        //     const nationality = $(this).find('.playerCountry').text();
-        //     const goals = $(this).find('.mainStat').text();
+        dogList.each(function () {
+            let link = $(this.children[0].children).find('p > a')[0].attribs.href;
+            let name = $(this.children[0].children).find('p > a')[0].children[0].data
 
-        //     topPremierLeagueScorers.push({
-        //         rank,
-        //         name: playerName,
-        //         nationality,
-        //         goals,
-        //     });
-        // });
+            dogArray.push({
+                link,
+                name
+            });
+        });
 
-        console.log($(dogList[0].children[0].children).find('p > a')[0]);
+        console.log($(dogList[0].children[0].children).find('p > a')[0].children[0]);
+        // console.log(dogArray)
         
     })
     .catch(console.error);
