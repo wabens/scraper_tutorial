@@ -17,7 +17,7 @@ axios(url)
         // targets the body of the table holding player information
         // returns array with objects of 'tr's 
         // note the array is weird and doesn't use square brackets
-        const dogList = $('.animal-list');
+        const dogList = $('.animal-list>li');
         const dogArray = [];
 
         // loop through tr's and extract relevant information based on css class
@@ -35,6 +35,8 @@ axios(url)
         //     });
         // });
 
-        console.log(dogList[0].children[0]);
+        // console.log(dogList[0].children[0]);
+        console.log(dogList[0]);
+        
     })
     .catch(console.error);
